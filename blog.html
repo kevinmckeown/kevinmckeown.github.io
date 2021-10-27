@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" />
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Blog | Your awesome title</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Blog" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/blog.html" />
+<meta property="og:url" content="http://localhost:4000/blog.html" />
+<meta property="og:site_name" content="Your awesome title" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Blog" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Blog","url":"http://localhost:4000/blog.html","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <nav>
+  
+    <a href="/" >Home</a>
+  
+    <a href="/about/" >About</a>
+  
+    <a href="/blog.html" class="current">Blog</a>
+  
+    <a href="/authors.html" >Authors</a>
+  
+</nav>
+
+    <h1>Latest Posts</h1>
+
+<ul>
+  
+    <li>
+      <h2><a href="/mermaid/2021/10/27/diagram-powerline.html">Home network</a></h2>
+      <p>Here’s the set-up…</p>
+
+<p>A note on Mesh WiFi…</p>
+<ul>
+  <li>3 x TP-Link Deco M5s</li>
+</ul>
+
+<p>A note on Powerline…</p>
+<ul>
+  <li>TP-Link TL-PA8033PKIT, two plugs - one with three x ethernet ports, other with one.</li>
+</ul>
+
+<p>A note on cables…</p>
+<ul>
+  <li>Cat6 cable - max 1000 Meg, better shielding, not much more expensive than Cat5e</li>
+  <li>Cat5e cable - max 1000 Meg</li>
+  <li>Cat5 cable - been around forever, max 100 Meg</li>
+</ul>
+
+<p>Pack of 5 x Cat6 cables - less than £10.</p>
+
+<p>More reading <a href="https://www.cablematters.com/blog/Networking/cat5e-vs-cat6">https://www.cablematters.com/blog/Networking/cat5e-vs-cat6</a></p>
+
+<script src="/assets/mermaid-8.13.3/mermaid.min.js"></script>
+
+<div class="mermaid">
+
+graph LR
+
+Router --- |Cat6|DecoMain
+Router --- EEBoostBox
+Router -.- |2.4G only, alt SSID<br />5G disabled|DustyWiFi
+
+DecoMain --- |Cat6|Powerline1  %%todo, cat6 cable
+
+Powerline1 -.- |house electricity|Powerline2
+Powerline2 ---|Cat6| DecoStudy
+
+%%Powerline1 --- Piggy
+%%Piggy --- 
+%%Piggy --- P_Spare1
+
+Powerline1 --- |Cat5e|PS4White
+Powerline1 --- |Cat5e|LGTV
+
+DecoStudy ---- |Cat5|SamKnows
+
+SamKnows --- |10/100|PC1
+SamKnows --- |10/100|PC2
+SamKnows --- |10/100|HA
+SamKnows --- |10/100|Pi400-PiHole
+
+DecoKitchen --- DK_Spare1
+DecoKitchen --- DK_Spare2
+
+%%DecoBedroom --- DB_Spare1
+%%DecoBedroom --- DB_Spare2
+
+DecoMain -.- |2.4G and 5G|WiFi
+DecoStudy -.- |2.4G and 5G|WiFi.
+DecoKitchen -.- |2.4G and 5G|WiFi..
+%%DecoPlug -.- WiFi...
+%%DecoBedroom -.- WiFi....
+
+style Router fill:#A00;
+style SamKnows fill:#A00;
+%%style Piggy fill:#A00;
+
+style DecoMain fill:#383;
+style DecoStudy fill:#383;
+style DecoKitchen fill:#383;
+%%style DecoPlug fill:#383;
+%%style DecoBedroom fill:#383;
+
+style EEBoostBox fill:#C097;
+style LGTV fill:#C097;
+style PC1 fill:#C097;
+style PC2 fill:#C097;
+style Pi400-PiHole fill:#C097;
+style HA fill:#C097;
+style PS4White fill:#C097;
+
+style Powerline1 fill:#741;
+style Powerline2 fill:#741;
+
+</div>
+
+    </li>
+  
+    <li>
+      <h2><a href="/mermaid/2021/10/27/diagram-mermaid.html">Mermaid!</a></h2>
+      <script src="/assets/mermaid-8.13.3/mermaid.min.js"></script>
+
+<div class="mermaid">
+graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;
+
+</div>
+
+    </li>
+  
+    <li>
+      <h2><a href="/jekyll/update/2021/10/22/welcome-to-jekyll.html">Welcome to Jekyll!</a></h2>
+      <p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+
+<p>Jekyll requires blog post files to be named according to the following format:</p>
+
+<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+
+<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+
+
+    </li>
+  
+</ul>
+  </body>
+</html>

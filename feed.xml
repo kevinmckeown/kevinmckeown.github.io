@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-27T17:52:39+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Home network</title><link href="http://localhost:4000/mermaid/2021/10/27/diagram-powerline.html" rel="alternate" type="text/html" title="Home network" /><published>2021-10-27T16:15:00+01:00</published><updated>2021-10-27T16:15:00+01:00</updated><id>http://localhost:4000/mermaid/2021/10/27/diagram-powerline</id><content type="html" xml:base="http://localhost:4000/mermaid/2021/10/27/diagram-powerline.html">&lt;p&gt;Here’s the set-up…&lt;/p&gt;
+
+&lt;p&gt;A note on Mesh WiFi…&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;3 x TP-Link Deco M5s&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A note on Powerline…&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;TP-Link TL-PA8033PKIT, two plugs - one with three x ethernet ports, other with one.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A note on cables…&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Cat6 cable - max 1000 Meg, better shielding, not much more expensive than Cat5e&lt;/li&gt;
+  &lt;li&gt;Cat5e cable - max 1000 Meg&lt;/li&gt;
+  &lt;li&gt;Cat5 cable - been around forever, max 100 Meg&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pack of 5 x Cat6 cables - less than £10.&lt;/p&gt;
+
+&lt;p&gt;More reading &lt;a href=&quot;https://www.cablematters.com/blog/Networking/cat5e-vs-cat6&quot;&gt;https://www.cablematters.com/blog/Networking/cat5e-vs-cat6&lt;/a&gt;&lt;/p&gt;
+
+&lt;script src=&quot;/assets/mermaid-8.13.3/mermaid.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;div class=&quot;mermaid&quot;&gt;
+
+graph LR
+
+Router --- |Cat6|DecoMain
+Router --- EEBoostBox
+Router -.- |2.4G only, alt SSID&lt;br /&gt;5G disabled|DustyWiFi
+
+DecoMain --- |Cat6|Powerline1  %%todo, cat6 cable
+
+Powerline1 -.- |house electricity|Powerline2
+Powerline2 ---|Cat6| DecoStudy
+
+%%Powerline1 --- Piggy
+%%Piggy --- 
+%%Piggy --- P_Spare1
+
+Powerline1 --- |Cat5e|PS4White
+Powerline1 --- |Cat5e|LGTV
+
+DecoStudy ---- |Cat5|SamKnows
+
+SamKnows --- |10/100|PC1
+SamKnows --- |10/100|PC2
+SamKnows --- |10/100|HA
+SamKnows --- |10/100|Pi400-PiHole
+
+DecoKitchen --- DK_Spare1
+DecoKitchen --- DK_Spare2
+
+%%DecoBedroom --- DB_Spare1
+%%DecoBedroom --- DB_Spare2
+
+DecoMain -.- |2.4G and 5G|WiFi
+DecoStudy -.- |2.4G and 5G|WiFi.
+DecoKitchen -.- |2.4G and 5G|WiFi..
+%%DecoPlug -.- WiFi...
+%%DecoBedroom -.- WiFi....
+
+style Router fill:#A00;
+style SamKnows fill:#A00;
+%%style Piggy fill:#A00;
+
+style DecoMain fill:#383;
+style DecoStudy fill:#383;
+style DecoKitchen fill:#383;
+%%style DecoPlug fill:#383;
+%%style DecoBedroom fill:#383;
+
+style EEBoostBox fill:#C097;
+style LGTV fill:#C097;
+style PC1 fill:#C097;
+style PC2 fill:#C097;
+style Pi400-PiHole fill:#C097;
+style HA fill:#C097;
+style PS4White fill:#C097;
+
+style Powerline1 fill:#741;
+style Powerline2 fill:#741;
+
+&lt;/div&gt;</content><author><name>kevin</name></author><category term="mermaid" /><summary type="html">Here’s the set-up… A note on Mesh WiFi… 3 x TP-Link Deco M5s A note on Powerline… TP-Link TL-PA8033PKIT, two plugs - one with three x ethernet ports, other with one. A note on cables… Cat6 cable - max 1000 Meg, better shielding, not much more expensive than Cat5e Cat5e cable - max 1000 Meg Cat5 cable - been around forever, max 100 Meg Pack of 5 x Cat6 cables - less than £10. More reading https://www.cablematters.com/blog/Networking/cat5e-vs-cat6 graph LR Router --- |Cat6|DecoMain Router --- EEBoostBox Router -.- |2.4G only, alt SSID5G disabled|DustyWiFi DecoMain --- |Cat6|Powerline1 %%todo, cat6 cable Powerline1 -.- |house electricity|Powerline2 Powerline2 ---|Cat6| DecoStudy %%Powerline1 --- Piggy %%Piggy --- %%Piggy --- P_Spare1 Powerline1 --- |Cat5e|PS4White Powerline1 --- |Cat5e|LGTV DecoStudy ---- |Cat5|SamKnows SamKnows --- |10/100|PC1 SamKnows --- |10/100|PC2 SamKnows --- |10/100|HA SamKnows --- |10/100|Pi400-PiHole DecoKitchen --- DK_Spare1 DecoKitchen --- DK_Spare2 %%DecoBedroom --- DB_Spare1 %%DecoBedroom --- DB_Spare2 DecoMain -.- |2.4G and 5G|WiFi DecoStudy -.- |2.4G and 5G|WiFi. DecoKitchen -.- |2.4G and 5G|WiFi.. %%DecoPlug -.- WiFi... %%DecoBedroom -.- WiFi.... style Router fill:#A00; style SamKnows fill:#A00; %%style Piggy fill:#A00; style DecoMain fill:#383; style DecoStudy fill:#383; style DecoKitchen fill:#383; %%style DecoPlug fill:#383; %%style DecoBedroom fill:#383; style EEBoostBox fill:#C097; style LGTV fill:#C097; style PC1 fill:#C097; style PC2 fill:#C097; style Pi400-PiHole fill:#C097; style HA fill:#C097; style PS4White fill:#C097; style Powerline1 fill:#741; style Powerline2 fill:#741;</summary></entry><entry><title type="html">Mermaid!</title><link href="http://localhost:4000/mermaid/2021/10/27/diagram-mermaid.html" rel="alternate" type="text/html" title="Mermaid!" /><published>2021-10-27T16:14:00+01:00</published><updated>2021-10-27T16:14:00+01:00</updated><id>http://localhost:4000/mermaid/2021/10/27/diagram-mermaid</id><content type="html" xml:base="http://localhost:4000/mermaid/2021/10/27/diagram-mermaid.html">&lt;script src=&quot;/assets/mermaid-8.13.3/mermaid.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;div class=&quot;mermaid&quot;&gt;
+graph TD;
+    A--&amp;gt;B;
+    A--&amp;gt;C;
+    B--&amp;gt;D;
+    C--&amp;gt;D;
+
+&lt;/div&gt;</content><author><name>kevin</name></author><category term="mermaid" /><summary type="html">graph TD; A--&amp;gt;B; A--&amp;gt;C; B--&amp;gt;D; C--&amp;gt;D;</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2021/10/22/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2021-10-22T13:52:39+01:00</published><updated>2021-10-22T13:52:39+01:00</updated><id>http://localhost:4000/jekyll/update/2021/10/22/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2021/10/22/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated. Jekyll requires blog post files to be named according to the following format: YEAR-MONTH-DAY-title.MARKUP Where YEAR is a four-digit number, MONTH and DAY are both two-digit numbers, and MARKUP is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works. Jekyll also offers powerful support for code snippets: def print_hi(name) puts &quot;Hi, #{name}&quot; end print_hi('Tom') #=&amp;gt; prints 'Hi, Tom' to STDOUT. Check out the Jekyll docs for more info on how to get the most out of Jekyll. File all bugs/feature requests at Jekyll’s GitHub repo. If you have questions, you can ask them on Jekyll Talk.</summary></entry></feed>
